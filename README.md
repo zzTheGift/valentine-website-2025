@@ -20,7 +20,7 @@ A cute and interactive Valentine's Day website where you can ask your special so
 2. Click the pencil icon (✏️) at the top right to edit
 3. Find this line: `const VALENTINE_NAME = "Jade";`
 4. Change "Jade" to your valentine's name
-5. Scroll down and click "Commit changes" (green button)
+5. Click on "Commit changes" (green button at the top right)
 
 ### 3. Want to Change More?
 To change questions or messages:
