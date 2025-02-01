@@ -64,6 +64,12 @@ body {
     display: none;
 }
 
+.disabled-btn {
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 .secret-answer {
     position: fixed;
     bottom: 20px;
@@ -73,6 +79,8 @@ body {
     transition: opacity 0.3s;
     transform: scale(0.7);
     z-index: 2;
+    animation: subtle-hint 2s infinite alternate;
+    animation-delay: 5s;
 }
 
 .secret-answer .cute-btn {
@@ -82,6 +90,7 @@ body {
 
 .secret-answer:hover {
     opacity: 1;
+    animation: none;
 }
 
 .love-meter {
@@ -154,6 +163,7 @@ body {
 .hearts-explosion {
     font-size: 2rem;
     animation: explode 1s ease-out forwards;
+    margin-top: 30px;
 }
 
 @keyframes explode {
@@ -186,10 +196,17 @@ h2 {
     text-shadow: 2px 2px 4px rgba(255, 71, 87, 0.3);
 }
 
+
 .celebration-text {
-    font-size: 1.3em;
+    font-size: 3em;
     color: #ff4757;
     font-weight: bold;
-    margin: 20px 0;
+    margin: 30px 0;
     animation: bounce 0.5s infinite alternate;
+    text-shadow: 2px 2px 4px rgba(255, 71, 87, 0.3);
+}
+
+@keyframes subtle-hint {
+    0% { opacity: 0.2; }
+    100% { opacity: 0.3; }
 } 
