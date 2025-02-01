@@ -13,10 +13,9 @@ A beautiful, interactive Valentine's Day website to ask your special someone to 
 ## 🚀 Quick Start Guide
 
 ### 1. Get Your Own Copy
-1. Click the green "Use this template" button at the top of this page
-2. Name your repository (e.g., "my-valentine-2025")
-3. Choose "Public" repository
-4. Click "Create repository from template"
+1. Make sure you're logged into GitHub
+2. Click the "Fork" button at the top right of this page
+3. Wait a few seconds - you now have your own copy!
 
 ### 2. Customize for Your Valentine
 
@@ -86,7 +85,7 @@ animations: {
 5. Wait a few minutes
 6. Your site will be live at: `https://your-username.github.io/repository-name`
 
-#### Using Netlify (Free, Recommended)
+#### Using Netlify (Free, Recommended, Custom URL)
 1. Go to [Netlify](https://www.netlify.com/)
 2. Sign up for a free account
 3. Click "Add new site" → "Import an existing project"
@@ -105,7 +104,6 @@ animations: {
 ## 🎨 Want Different Colors?
 Use these tools to find beautiful colors:
 - [Coolors](https://coolors.co/) - Color palette generator
-- [uiGradients](https://uigradients.com/) - Gradient colors
 - [ColorHunt](https://colorhunt.co/) - Color palettes
 
 ## 🔍 Need More Emojis?
@@ -121,6 +119,7 @@ Find more emojis at:
 ## 💖 Credits
 Created with love for Valentine's Day 2025.
 Feel free to use and modify for your special someone!
+- Louis Fontaine -
 
 ## 📜 License
 MIT License - Feel free to use this for your Valentine! 
