@@ -13,9 +13,11 @@ A beautiful, interactive Valentine's Day website to ask your special someone to 
 ## 🚀 Quick Start Guide
 
 ### 1. Get Your Own Copy
-1. Make sure you're logged into GitHub
-2. Click the "Fork" button at the top right of this page
-3. Wait a few seconds - you now have your own copy!
+1. Click the "Fork" button at the top right of this page
+2. Wait a few seconds while GitHub creates your copy
+3. You now have your own version of the code!
+
+Note: Make sure you're logged into your GitHub account. If you don't have one, you can [create a free account here](https://github.com/signup).
 
 ### 2. Customize for Your Valentine
 
@@ -27,51 +29,65 @@ A beautiful, interactive Valentine's Day website to ask your special someone to 
 
 Here's what you can customize in `config.js`:
 ```javascript
-// Your Valentine's name
-valentineName: "Jade"
+// Basic Information
+valentineName: "Jade"                    // Your Valentine's name
+pageTitle: "Will You Be My Valentine? 💝" // Browser tab title
 
-// Browser tab title
-pageTitle: "Will You Be My Valentine? 💝"
+// Floating Background Elements
+floatingEmojis: {
+    hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis in background
+    bears: ['🧸', '🐻']                       // Bear emojis in background
+}
 
-// Questions
+// Questions and Buttons
 questions: {
-    first: "Do you like me?",
-    second: "How much do you love me?",
-    third: "Will you be my Valentine...?"
+    first: {
+        text: "Do you like me?",                   // First question
+        yesBtn: "Yes",                             // Yes button text
+        noBtn: "No",                               // No button text
+        secretAnswer: "I don't like you, I love you! ❤️"  // Hidden message
+    },
+    second: {
+        text: "How much do you love me?",          // Second question
+        startText: "This much!",                   // Text before percentage
+        nextBtn: "Next ❤️"                         // Next button text
+    },
+    third: {
+        text: "Will you be my Valentine...?",      // Final question
+        yesBtn: "Yes!",                            // Yes button text
+        noBtn: "No"                                // No button text
+    }
 }
 
-// Secret message (appears when hovering bottom-right)
-secretAnswer: "I don't like you, I love you! ❤️"
-
-// Messages for the love meter
+// Love Meter Messages
 loveMessages: {
-    extreme: "WOOOOW You love me that much?? 🥰🚀💝",
-    high: "To infinity and beyond! 🚀💝",
-    normal: "And beyond! 🥰"
+    extreme: "WOOOOW You love me that much?? 🥰🚀💝",  // Shows above 5000%
+    high: "To infinity and beyond! 🚀💝",              // Shows above 1000%
+    normal: "And beyond! 🥰"                           // Shows above 100%
 }
 
-// Final celebration messages
+// Final Celebration
 celebration: {
-    title: "Yay! I'm the luckiest...",
-    message: "Now come get your gift...",
-    emojis: "🎁💖🤗💝💋❤️💕"
+    title: "Yay! I'm the luckiest person...",     // Celebration title
+    message: "Now come get your gift...",          // Celebration message
+    emojis: "🎁💖🤗💝💋❤️💕"                        // Celebration emojis
 }
 
-// Website colors
+// Website Colors
 colors: {
-    backgroundStart: "#ffafbd",
-    backgroundEnd: "#ffc3a0",
-    buttonBackground: "#ff6b6b",
-    buttonHover: "#ff8787",
-    textColor: "#ff4757"
+    backgroundStart: "#ffafbd",      // Background gradient start
+    backgroundEnd: "#ffc3a0",        // Background gradient end
+    buttonBackground: "#ff6b6b",     // Button color
+    buttonHover: "#ff8787",          // Button hover color
+    textColor: "#ff4757"            // Text color
 }
 
-// Animation settings
+// Animation Settings
 animations: {
-    floatDuration: "15s",
-    floatDistance: "50px",
-    bounceSpeed: "0.5s",
-    heartExplosionSize: 1.5
+    floatDuration: "15s",           // How long hearts float (10-20s)
+    floatDistance: "50px",          // Sideways movement (30-70px)
+    bounceSpeed: "0.5s",            // Bounce animation speed (0.3-0.7s)
+    heartExplosionSize: 1.5         // Final heart explosion size (1.2-2.0)
 }
 ```
 
@@ -97,7 +113,6 @@ animations: {
 ## 💡 Tips
 - Test the website before sending it to your Valentine
 - Try all the buttons and interactions
-- Make sure the love meter works
 - Check how it looks on mobile phones
 - Keep the secret message subtle (bottom-right corner)
 
