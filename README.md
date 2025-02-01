@@ -31,7 +31,7 @@ To change questions or messages:
 
 Some fun things to change:
 - Messages in `script.js` under `LOVE_MESSAGES`
-- Emojis in `script.js` under `HEARTS` and `BEARS`
+- Emojis in `script.js` under `HEARTS` and `BEARS`. Find emojis here : https://emojikeyboard.top/fr/
 - Questions in `index.html` (look for `<h2>` tags)
 
 ### 4. Preview Your Changes
