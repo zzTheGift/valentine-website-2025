@@ -8,6 +8,38 @@ A cute and interactive Valentine's Day website where you can ask your special so
 - A hidden special message
 - A grand celebration when they say yes!
 
+## 🎯 For Non-Developers: Easy Setup Guide To Customize For Your Valentine
+
+### 1. Copy the Project (Fork)
+1. Make sure you're logged into GitHub
+2. Click the "Fork" button at the top right of this page
+3. Wait a few seconds - you now have your own copy!
+
+### 2. Customize for Your Valentine
+1. In your forked repository, click on `script.js`
+2. Click the pencil icon (✏️) at the top right to edit
+3. Find this line: `const VALENTINE_NAME = "Jade";`
+4. Change "Jade" to your valentine's name
+5. Scroll down and click "Commit changes" (green button)
+
+### 3. Want to Change More?
+To change questions or messages:
+1. Click any file (script.js, index.html)
+2. Click the pencil icon (✏️)
+3. Make your changes
+4. Click "Commit changes"
+
+Some fun things to change:
+- Messages in `script.js` under `LOVE_MESSAGES`
+- Emojis in `script.js` under `HEARTS` and `BEARS`
+- Questions in `index.html` (look for `<h2>` tags)
+
+### 4. Preview Your Changes
+After each change, wait 1-2 minutes and:
+1. Go to the "Actions" tab
+2. Look for a green checkmark ✅
+3. Your site is updated!
+
 ## 🎯 How to Use This for Your Valentine
 
 ### Deployment with Netlify (Free Custom URL)
@@ -71,6 +103,7 @@ For those who know coding:
 
 ## 💖 Credits
 Created with love for Valentine's Day 2025. Feel free to use and modify for your special someone!
+Made by Louis Fontaine.
 
 ## 🤝 Contributing
 Found a bug or want to improve the code? Feel free to create an issue or pull request!
