@@ -71,6 +71,17 @@ const CONFIG = {
         floatDistance: "50px",          // How far hearts move sideways (30-70px recommended)
         bounceSpeed: "0.5s",            // Speed of bouncing animations (0.3-0.7s recommended)
         heartExplosionSize: 1.5         // Size of heart explosion effect (1.2-2.0 recommended)
+    },
+
+    // Background Music (Optional)
+    // Add your own music URL after getting proper licenses
+    music: {
+        enabled: true,                     // Music feature is enabled
+        autoplay: true,                    // Try to autoplay (note: some browsers may block this)
+        musicUrl: "https://cdn.pixabay.com/download/audio/2022/11/22/audio_febc508520.mp3", // Example royalty-free love song
+        startText: "🎵 Play Music",        // Button text to start music
+        stopText: "🔇 Stop Music",         // Button text to stop music
+        volume: 0.5                        // Volume level (0.0 to 1.0)
     }
 };
 
