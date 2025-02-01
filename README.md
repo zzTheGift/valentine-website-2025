@@ -156,7 +156,7 @@ music: {
 }
 ```
 
-## 3. 🎵 Adding Your Own Background Music
+### 3. Adding Your Own Background Music 🎵
 
 Want to make it extra special with your own romantic song? Follow these steps to add background music:
 
