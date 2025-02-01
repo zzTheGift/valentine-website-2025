@@ -193,7 +193,7 @@ music: {
 }
 ```
 
-### 4. Make It Live!
+### 4. Make It Live! (Get your online website URL)
 
 #### Using GitHub Pages (Free)
 1. Go to your repository's "Settings"
