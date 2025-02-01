@@ -1,112 +1,126 @@
 # 💝 Valentine's Day Website 2025 💝
 
-A cute and interactive Valentine's Day website where you can ask your special someone to be your Valentine! The website features:
-- Floating hearts and bears
-- Interactive questions
-- A love meter that goes beyond 100%
-- Playful buttons that run away
-- A hidden special message
-- A grand celebration when they say yes!
+A beautiful, interactive Valentine's Day website to ask your special someone to be your Valentine! 
 
-## 🎯 For Non-Developers: Easy Setup Guide To Customize For Your Valentine
+## ✨ Features
+- 💖 Floating hearts and bears
+- 🎯 Interactive questions
+- 📏 Love meter that goes beyond 100%
+- 🏃‍♂️ Playful buttons that run away
+- 🎁 Hidden special message
+- 🎉 Grand celebration when they say yes!
 
-### 1. Copy the Project (Fork)
-1. Make sure you're logged into GitHub
-2. Click the "Fork" button at the top right of this page
-3. Wait a few seconds - you now have your own copy!
+## 🚀 Quick Start Guide
+
+### 1. Get Your Own Copy
+1. Click the green "Use this template" button at the top of this page
+2. Name your repository (e.g., "my-valentine-2025")
+3. Choose "Public" repository
+4. Click "Create repository from template"
 
 ### 2. Customize for Your Valentine
-1. In your forked repository, click on `script.js`
-2. Click the pencil icon (✏️) at the top right to edit
-3. Find this line: `const VALENTINE_NAME = "Jade";`
-4. Change "Jade" to your valentine's name
-5. Click on "Commit changes" (green button at the top right)
 
-### 3. Want to Change More?
-To change questions or messages:
-1. Click any file (script.js, index.html)
-2. Click the pencil icon (✏️)
-3. Make your changes
-4. Click "Commit changes"
+#### Easy Way (Recommended)
+1. In your new repository, click on `config.js`
+2. Click the pencil icon (✏️) to edit
+3. Change the values to personalize your website
+4. Click "Commit changes" at the bottom
 
-Some fun things to change:
-- Messages in `script.js` under `LOVE_MESSAGES`
-- Emojis in `script.js` under `HEARTS` and `BEARS`. Find emojis here : https://emojikeyboard.top/fr/
-- Questions in `index.html` (look for `<h2>` tags)
+Here's what you can customize in `config.js`:
+```javascript
+// Your Valentine's name
+valentineName: "Jade"
 
-### 4. Preview Your Changes
-After each change, wait 1-2 minutes and:
-1. Go to the "Actions" tab
-2. Look for a green checkmark ✅
-3. Your site is updated!
+// Browser tab title
+pageTitle: "Will You Be My Valentine? 💝"
 
-## 🎯 How to Use This for Your Valentine
+// Questions
+questions: {
+    first: "Do you like me?",
+    second: "How much do you love me?",
+    third: "Will you be my Valentine...?"
+}
 
-### Deployment with Netlify (Free Custom URL)
-1. Go to [Netlify](https://www.netlify.com/) and sign up for a free account
-2. Click the "Add new site" button
-3. Choose "Import an existing project"
-4. Select "Deploy with GitHub"
-5. Choose your forked repository
-6. Click "Deploy site"
-7. Once deployed, click on "Domain settings"
-8. Under "Custom domains", click "Add custom domain"
-9. Type your desired subdomain, for example: `my-valentine-2025`
-   - This will create: `my-valentine-2025.netlify.app`
-   - If the name is taken, try another one!
-10. Your website will be live at your chosen URL (e.g., `do-you-want-to-be-my-valentines.netlify.app`)
+// Secret message (appears when hovering bottom-right)
+secretAnswer: "I don't like you, I love you! ❤️"
 
-Note: Netlify offers free custom domains ending in `.netlify.app`. You can also use your own domain name if you have one!
+// Messages for the love meter
+loveMessages: {
+    extreme: "WOOOOW You love me that much?? 🥰🚀💝",
+    high: "To infinity and beyond! 🚀💝",
+    normal: "And beyond! 🥰"
+}
 
-### Customization Guide
+// Final celebration messages
+celebration: {
+    title: "Yay! I'm the luckiest...",
+    message: "Now come get your gift...",
+    emojis: "🎁💖🤗💝💋❤️💕"
+}
 
-#### To Change the Text
-In `script.js`, find these sections at the top:
-- `VALENTINE_NAME`: Your valentine's name
-- `LOVE_MESSAGES`: Different messages for the love meter
-- `CELEBRATION`: The final celebration text
-- `HEARTS` and `BEARS`: Floating emojis
+// Website colors
+colors: {
+    backgroundStart: "#ffafbd",
+    backgroundEnd: "#ffc3a0",
+    buttonBackground: "#ff6b6b",
+    buttonHover: "#ff8787",
+    textColor: "#ff4757"
+}
 
-In `index.html`, look for "CUSTOMIZE" comments to change:
-- Questions text
-- Secret answer message
+// Animation settings
+animations: {
+    floatDuration: "15s",
+    floatDistance: "50px",
+    bounceSpeed: "0.5s",
+    heartExplosionSize: 1.5
+}
+```
 
-#### To Change Colors
-In `styles.css`, find the `:root` section with color variables:
-- Background gradient colors
-- Button colors
-- Text colors
+### 3. Make It Live!
 
-#### To Change Animation Settings
-In `styles.css`, find the `:root` section with animation variables:
-- Floating speed and distance
-- Bounce animation speed
-- Heart explosion size
+#### Using GitHub Pages (Free)
+1. Go to your repository's "Settings"
+2. Click "Pages" in the left sidebar
+3. Under "Source", select "main" branch
+4. Click "Save"
+5. Wait a few minutes
+6. Your site will be live at: `https://your-username.github.io/repository-name`
 
-## 🚀 Advanced Customization
-For those who know coding:
-- The main logic is in `script.js`
-- Styles are in `styles.css`
-- HTML structure is in `index.html`
+#### Using Netlify (Free, Recommended)
+1. Go to [Netlify](https://www.netlify.com/)
+2. Sign up for a free account
+3. Click "Add new site" → "Import an existing project"
+4. Choose your GitHub repository
+5. Click "Deploy site"
+6. Once deployed, click "Domain settings"
+7. Choose a custom domain (e.g., `my-valentine-2025.netlify.app`)
 
-## 📱 Testing
-- Open the website on your phone to test before sending
-- Make sure all animations work
-- Test the love meter
-- Try clicking all buttons
+## 💡 Tips
+- Test the website before sending it to your Valentine
+- Try all the buttons and interactions
+- Make sure the love meter works
+- Check how it looks on mobile phones
+- Keep the secret message subtle (bottom-right corner)
 
-## 💡 Ideas for Customization
-- Add your own background music
-- Change the floating emojis
-- Add more questions
-- Modify the celebration effects
+## 🎨 Want Different Colors?
+Use these tools to find beautiful colors:
+- [Coolors](https://coolors.co/) - Color palette generator
+- [uiGradients](https://uigradients.com/) - Gradient colors
+- [ColorHunt](https://colorhunt.co/) - Color palettes
+
+## 🔍 Need More Emojis?
+Find more emojis at:
+- [EmojiKeyboard](https://emojikeyboard.top/fr/)
+- [Emojipedia](https://emojipedia.org/)
+
+## 🤝 Need Help?
+- Create an issue in this repository
+- Check existing issues for solutions
+- Contact me through GitHub
 
 ## 💖 Credits
-Created with love for Valentine's Day 2025. Feel free to use and modify for your special someone!
-Made by Louis Fontaine.
-
-## 🤝 Contributing
-Found a bug or want to improve the code? Feel free to create an issue or pull request!
+Created with love for Valentine's Day 2025.
+Feel free to use and modify for your special someone!
 
 ## 📜 License
 MIT License - Feel free to use this for your Valentine! 

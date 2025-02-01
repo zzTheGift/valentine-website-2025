@@ -1,37 +1,115 @@
-// CUSTOMIZE: Your Valentine's name
-const VALENTINE_NAME = "Jade";  // <- Change this to your valentine's name
+// Initialize configuration
+const config = window.VALENTINE_CONFIG;
 
-// CUSTOMIZE: Floating emojis - Add or remove emojis from these arrays
-const HEARTS = ['❤️', '💖', '💝', '💗', '💓'];  // Emojis for floating hearts
-const BEARS = ['🧸', '🐻'];  // Emojis for floating bears
+// Validate configuration
+function validateConfig() {
+    const warnings = [];
 
-// CUSTOMIZE: Love meter messages
-const LOVE_MESSAGES = {
-    extreme: " WOOOOW You love me that much?? 🥰🚀💝",  // Shown at 5000%+
-    high: " and beyond! To infinity and beyond! 🚀💝",   // Shown at 1000%+
-    normal: " and beyond! 🥰"                           // Shown above 100%
-};
+    // Check required fields
+    if (!config.valentineName) {
+        warnings.push("Valentine's name is not set! Using default.");
+        config.valentineName = "My Love";
+    }
 
-// CUSTOMIZE: Celebration message
-const CELEBRATION = {
-    title: "Yay! I'm the luckiest person in the world! 🎉💝💖💝💓",
-    message: "Now come get your gift, a big warm hug and a huge kiss!",
-    emojis: "🎁💖🤗💝💋❤️💕"
-};
+    // Validate colors
+    const isValidHex = (hex) => /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(hex);
+    Object.entries(config.colors).forEach(([key, value]) => {
+        if (!isValidHex(value)) {
+            warnings.push(`Invalid color for ${key}! Using default.`);
+            config.colors[key] = getDefaultColor(key);
+        }
+    });
 
-// Add this at the top of script.js
+    // Validate animation values
+    if (parseFloat(config.animations.floatDuration) < 5) {
+        warnings.push("Float duration too short! Setting to 5s minimum.");
+        config.animations.floatDuration = "5s";
+    }
+
+    if (config.animations.heartExplosionSize < 1 || config.animations.heartExplosionSize > 3) {
+        warnings.push("Heart explosion size should be between 1 and 3! Using default.");
+        config.animations.heartExplosionSize = 1.5;
+    }
+
+    // Log warnings if any
+    if (warnings.length > 0) {
+        console.warn("⚠️ Configuration Warnings:");
+        warnings.forEach(warning => console.warn("- " + warning));
+    }
+}
+
+// Default color values
+function getDefaultColor(key) {
+    const defaults = {
+        backgroundStart: "#ffafbd",
+        backgroundEnd: "#ffc3a0",
+        buttonBackground: "#ff6b6b",
+        buttonHover: "#ff8787",
+        textColor: "#ff4757"
+    };
+    return defaults[key];
+}
+
+// Set page title
+document.title = config.pageTitle;
+
+// Initialize the page content when DOM is loaded
 window.addEventListener('DOMContentLoaded', () => {
-    // Set the valentine's name in the title
-    document.getElementById('valentineTitle').textContent = `${VALENTINE_NAME}, my love, ...`;
+    // Validate configuration first
+    validateConfig();
+
+    // Set texts from config
+    document.getElementById('valentineTitle').textContent = `${config.valentineName}, my love...`;
+    
+    // Set first question texts
+    document.getElementById('question1Text').textContent = config.questions.first.text;
+    document.getElementById('yesBtn1').textContent = config.questions.first.yesBtn;
+    document.getElementById('noBtn1').textContent = config.questions.first.noBtn;
+    document.getElementById('secretAnswerBtn').textContent = config.questions.first.secretAnswer;
+    
+    // Set second question texts
+    document.getElementById('question2Text').textContent = config.questions.second.text;
+    document.getElementById('startText').textContent = config.questions.second.startText;
+    document.getElementById('nextBtn').textContent = config.questions.second.nextBtn;
+    
+    // Set third question texts
+    document.getElementById('question3Text').textContent = config.questions.third.text;
+    document.getElementById('yesBtn3').textContent = config.questions.third.yesBtn;
+    document.getElementById('noBtn3').textContent = config.questions.third.noBtn;
+
+    // Create initial floating elements
+    createFloatingElements();
 });
 
-// Position floating elements randomly
-const floatingElements = document.querySelectorAll('.heart, .bear');
-floatingElements.forEach(element => {
+// Create floating hearts and bears
+function createFloatingElements() {
+    const container = document.querySelector('.floating-elements');
+    
+    // Create hearts
+    config.floatingEmojis.hearts.forEach(heart => {
+        const div = document.createElement('div');
+        div.className = 'heart';
+        div.innerHTML = heart;
+        setRandomPosition(div);
+        container.appendChild(div);
+    });
+
+    // Create bears
+    config.floatingEmojis.bears.forEach(bear => {
+        const div = document.createElement('div');
+        div.className = 'bear';
+        div.innerHTML = bear;
+        setRandomPosition(div);
+        container.appendChild(div);
+    });
+}
+
+// Set random position for floating elements
+function setRandomPosition(element) {
     element.style.left = Math.random() * 100 + 'vw';
     element.style.animationDelay = Math.random() * 5 + 's';
     element.style.animationDuration = 10 + Math.random() * 20 + 's';
-});
+}
 
 // Function to show next question
 function showNextQuestion(questionNumber) {
@@ -39,7 +117,7 @@ function showNextQuestion(questionNumber) {
     document.getElementById(`question${questionNumber}`).classList.remove('hidden');
 }
 
-// Function to move the "No" button when hovered
+// Function to move the "No" button when clicked
 function moveButton(button) {
     const x = Math.random() * (window.innerWidth - button.offsetWidth);
     const y = Math.random() * (window.innerHeight - button.offsetHeight);
@@ -48,7 +126,7 @@ function moveButton(button) {
     button.style.top = y + 'px';
 }
 
-// Update love meter value with extra love message and visual feedback
+// Love meter functionality
 const loveMeter = document.getElementById('loveMeter');
 const loveValue = document.getElementById('loveValue');
 const extraLove = document.getElementById('extraLove');
@@ -70,16 +148,16 @@ loveMeter.addEventListener('input', () => {
         loveMeter.style.width = `calc(100% + ${extraWidth}px)`;
         loveMeter.style.transition = 'width 0.3s';
         
-        // Add some fun text variations based on the percentage
+        // Show different messages based on the value
         if (value >= 5000) {
             extraLove.classList.add('super-love');
-            extraLove.textContent = LOVE_MESSAGES.extreme;
+            extraLove.textContent = config.loveMessages.extreme;
         } else if (value > 1000) {
             extraLove.classList.remove('super-love');
-            extraLove.textContent = LOVE_MESSAGES.high;
+            extraLove.textContent = config.loveMessages.high;
         } else {
             extraLove.classList.remove('super-love');
-            extraLove.textContent = LOVE_MESSAGES.normal;
+            extraLove.textContent = config.loveMessages.normal;
         }
     } else {
         extraLove.classList.add('hidden');
@@ -88,7 +166,7 @@ loveMeter.addEventListener('input', () => {
     }
 });
 
-// Ensure proper initialization
+// Initialize love meter
 window.addEventListener('DOMContentLoaded', setInitialPosition);
 window.addEventListener('load', setInitialPosition);
 
@@ -98,23 +176,23 @@ function celebrate() {
     const celebration = document.getElementById('celebration');
     celebration.classList.remove('hidden');
     
-    // Set celebration messages from constants
-    document.getElementById('celebrationTitle').textContent = CELEBRATION.title;
-    document.getElementById('celebrationMessage').textContent = CELEBRATION.message;
-    document.getElementById('celebrationEmojis').textContent = CELEBRATION.emojis;
+    // Set celebration messages
+    document.getElementById('celebrationTitle').textContent = config.celebration.title;
+    document.getElementById('celebrationMessage').textContent = config.celebration.message;
+    document.getElementById('celebrationEmojis').textContent = config.celebration.emojis;
     
-    // Create heart explosion
+    // Create heart explosion effect
     createHeartExplosion();
 }
 
+// Create heart explosion animation
 function createHeartExplosion() {
     for (let i = 0; i < 50; i++) {
         const heart = document.createElement('div');
-        heart.innerHTML = HEARTS[Math.floor(Math.random() * HEARTS.length)];
+        const randomHeart = config.floatingEmojis.hearts[Math.floor(Math.random() * config.floatingEmojis.hearts.length)];
+        heart.innerHTML = randomHeart;
         heart.className = 'heart';
         document.querySelector('.floating-elements').appendChild(heart);
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDelay = Math.random() * 2 + 's';
-        heart.style.animationDuration = `${5 + Math.random() * 10}s`;
+        setRandomPosition(heart);
     }
 } 
