@@ -1,10 +1,27 @@
+/* CUSTOMIZE COLORS */
+:root {
+    --background-color-1: #ffafbd;  /* Background gradient start */
+    --background-color-2: #ffc3a0;  /* Background gradient end */
+    --button-color: #ff6b6b;        /* Button background */
+    --button-hover: #ff8787;        /* Button hover color */
+    --text-color: #ff4757;          /* Main text color */
+}
+
+/* CUSTOMIZE ANIMATIONS */
+:root {
+    --float-duration: 15s;          /* How long it takes hearts to float up */
+    --float-distance: 50px;         /* How far hearts move sideways */
+    --bounce-speed: 0.5s;           /* Speed of bouncing animations */
+    --heart-explosion-size: 1.5;    /* Size of heart explosion effect */
+}
+
 body {
     margin: 0;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+    background: linear-gradient(135deg, var(--background-color-1), var(--background-color-2));
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
 }
@@ -31,7 +48,7 @@ body {
 .heart, .bear {
     position: absolute;
     font-size: 2rem;
-    animation: float 15s linear infinite;
+    animation: float var(--float-duration) linear infinite;
 }
 
 @keyframes float {
@@ -39,12 +56,12 @@ body {
         transform: translateY(100vh) translateX(0);
     }
     100% {
-        transform: translateY(-100px) translateX(50px);
+        transform: translateY(-100px) translateX(var(--float-distance));
     }
 }
 
 .cute-btn {
-    background: #ff6b6b;
+    background: var(--button-color);
     border: none;
     padding: 10px 20px;
     margin: 10px;
@@ -57,7 +74,7 @@ body {
 
 .cute-btn:hover {
     transform: scale(1.1);
-    background: #ff8787;
+    background: var(--button-hover);
 }
 
 .hidden {
@@ -171,7 +188,7 @@ body {
         transform: scale(0);
     }
     50% {
-        transform: scale(1.5);
+        transform: scale(var(--heart-explosion-size));
     }
     100% {
         transform: scale(1);
@@ -202,7 +219,7 @@ h2 {
     color: #ff4757;
     font-weight: bold;
     margin: 30px 0;
-    animation: bounce 0.5s infinite alternate;
+    animation: bounce var(--bounce-speed) infinite alternate;
     text-shadow: 2px 2px 4px rgba(255, 71, 87, 0.3);
 }
 
