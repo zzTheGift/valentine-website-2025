@@ -10,17 +10,21 @@ A cute and interactive Valentine's Day website where you can ask your special so
 
 ## 🎯 How to Use This for Your Valentine
 
-### Quick Start (No Coding Required)
-1. Click the "Fork" button at the top right of this page
-2. Go to `script.js` in your forked repository
-3. Click the edit (pencil) icon
-4. Find this line near the top: `const VALENTINE_NAME = "Jade";`
-5. Change "Jade" to your valentine's name
-6. Click the "Commit changes" button
-7. Go to Settings > Pages
-8. Under "Source", select "Deploy from a branch"
-9. Select "main" branch and click "Save"
-10. Wait a few minutes and your website will be live at `https://YOUR_USERNAME.github.io/valentine-website-2025`
+### Deployment with Netlify (Free Custom URL)
+1. Go to [Netlify](https://www.netlify.com/) and sign up for a free account
+2. Click the "Add new site" button
+3. Choose "Import an existing project"
+4. Select "Deploy with GitHub"
+5. Choose your forked repository
+6. Click "Deploy site"
+7. Once deployed, click on "Domain settings"
+8. Under "Custom domains", click "Add custom domain"
+9. Type your desired subdomain, for example: `my-valentine-2025`
+   - This will create: `my-valentine-2025.netlify.app`
+   - If the name is taken, try another one!
+10. Your website will be live at your chosen URL (e.g., `do-you-want-to-be-my-valentines.netlify.app`)
+
+Note: Netlify offers free custom domains ending in `.netlify.app`. You can also use your own domain name if you have one!
 
 ### Customization Guide
 
