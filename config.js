@@ -33,9 +33,9 @@ const CONFIG = {
             nextBtn: "Next ❤️"                                         // Text for the next button
         },
         third: {
-            text: "Will you Date me on February 26th?", // The big question!
+            text: "Will you Date me ba sa February 26th?", // The big question!
             yesBtn: "Yes!",                                             // Text for "Yes" button
-            noBtn: "No"                                                 // Text for "No" button
+            noBtn: "No DUH"                                                 // Text for "No" button
         }
     },
 
@@ -49,9 +49,9 @@ const CONFIG = {
 
     // Messages that appear after they say "Yes!"
     celebration: {
-        title: "WOW THANKYOU AO MUCHIE! 🎉💝💖💝💓",
-        message: "Giffft forrr uuu!",
-        emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
+        title: "WOW THANKYOU SO MUCHIE! 🥰",
+        message: "I LOVE YOU SO MUCH!",
+        emojis: "💝💝💝💝💝💝"  // These will bounce around
     },
 
     // Color scheme for the website
